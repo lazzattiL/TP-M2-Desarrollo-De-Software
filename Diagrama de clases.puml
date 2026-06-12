@@ -1,0 +1,50 @@
+@startuml AHKmundial
+
+class Participante {
+    nombre
+    apellido
+    mail
+    dni
+    medioContactoPreferido
+    institucion
+    referidos
+    categoria
+    probabilidad
+
+    contarReferidosConvertidos()
+}
+
+class Referido {
+    dni
+    mail
+    solicitudAceptada
+    quienRefiere
+    fechaHora
+
+    aceptarSolicitud()
+}
+
+class Probabilidad {
+    historialAcademico
+    participante
+
+    probabilidadDeGanar()
+}
+
+class Categoria {
+    nombre
+    costo
+    multiplicador
+}
+
+class Materia {
+    nombre
+    estado
+    nota
+}
+
+Participante --> "*"Referido
+Participante ---> Categoria
+Participante ---> Probabilidad
+
+@enduml
